@@ -1,0 +1,93 @@
+@keyframes example {
+    0% {
+        background-color: #000066;
+        left: 0px;
+        top: 0px;
+    }
+    10% {
+        background-color: #993333;
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        background-color: #990033;
+        left: 200px;
+        top: 0px;
+    }
+    30% {
+        background-color: #660033;
+        left: 200px;
+        top: 200px;
+    }
+    40% {
+        background-color: #993366;
+        left: 0px;
+        top: 200px;
+    }
+    50% {
+        background-color: #990099;
+        left: 0px;
+        top: 0px;
+    }
+    60% {
+        background-color: #993399;
+        left: 0px;
+        top: 0px;
+    }
+    70% {
+        background-color: #660066;
+        left: 200px;
+        top: 0px;
+    }
+    80% {
+        background-color: #9900cc;
+        left: 200px;
+        top: 200px;
+    }
+    90% {
+        background-color: #9900ff;
+        left: 0px;
+        top: 200px;
+    }
+    100% {
+        background-color: #6600cc;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+#border {
+    margin-top: 20px;
+    height: 100vh;
+    border: medium solid black;
+    border-radius: 15px;
+    max-width: 85%;
+    margin: auto;
+    animation-name: example;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+.container{
+    max-width: 100%;
+    height: 100%;
+}
+.towers {
+    
+    color: white;
+    height: 100%; 
+    position: relative;
+}
+#tower1{
+    border-right: medium solid black;
+}
+.tower-icon{
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.tower{
+    height: 100%;
+}
+

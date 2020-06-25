@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    var Gear = sequelize.define("Gear", {
+    var Gears = sequelize.define("Gears", {
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -22,5 +22,5 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING
         }
     });
-    return User;
+    return Gears;
 };
