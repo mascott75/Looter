@@ -1,5 +1,8 @@
 module.exports = function (sequelize, DataTypes) {
     var Players = sequelize.define("Players", {
+        number: {
+            type: DataTypes.INTEGER
+        },
         name: {
             type: DataTypes.STRING,
             allowNull: false
@@ -13,6 +16,9 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.INTEGER,
         },
         damage: {
+            type: DataTypes.DECIMAL
+        },
+        speed: {
             type: DataTypes.DECIMAL
         },
         ability: {

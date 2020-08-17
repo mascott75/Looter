@@ -1,4 +1,4 @@
-@keyframes example {
+/* @keyframes example {
     0% {
         background-color: #000066;
         left: 0px;
@@ -54,11 +54,11 @@
         left: 0px;
         top: 0px;
     }
-}
+} */
 
 #border {
     margin-top: 20px;
-    height: 100vh;
+    height: 90vh;
     border: medium solid black;
     border-radius: 15px;
     max-width: 85%;
@@ -77,15 +77,17 @@
     height: 100%; 
     position: relative;
 }
-#tower1{
+#tower1, #tower3    {
+    box-shadow: inset 0 0 10px #000;
+}
+#tower2{
     border-right: medium solid black;
+    border-left: medium solid black;
+    box-shadow: 0 0 20px #000
+    
 }
 .tower-icon{
-    display: block;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    text-align: center;
 }
 .tower{
     height: 100%;

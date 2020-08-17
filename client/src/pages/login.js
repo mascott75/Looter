@@ -5,6 +5,7 @@ import {FormBtn } from "../components/Form";
 import React, { useState, useEffect } from "react";
 import HeroBody from "../components/heroBody";
 import { useHistory } from "react-router-dom";
+import PlayButton from "../components/play_button/index"
 
 
 function Login() {
@@ -12,20 +13,26 @@ function Login() {
     const history = useHistory();
 
     useEffect(() => {
+        console.log("we got to here")
         API.checkUserLogged()
             .then((user) => {
+                console.log(user)
                 if (user.data.id)
                     history.push("/home");
+                else {
+                    console.log("we didnt make it doe.")
+                }
             })
     }, [])
     function handleFormSubmit(event) {
         event.preventDefault();
         console.log("you got here - login")
-        if (formObject.email && formObject.password) {
+        if (formObject.userName && formObject.password) {
             API.loginUser({
-                email: formObject.email,
+                userName: formObject.userName,
                 password: formObject.password
-            })
+            },
+            console.log("you logged in"))
                 .then(function () { history.push("/home") })
                 .catch(err => console.log(err));
         }
@@ -36,6 +43,7 @@ function Login() {
     };
     return (
         <Container fluid>
+            <PlayButton></PlayButton>
             <HeroBody />
             <section className="section wrapper">
                 <div className="container">
@@ -48,7 +56,7 @@ function Login() {
                     <form>
                         <div className="field">
                             <p className="control has-icons-left has-icons-right">
-                                <input onChange={handleInputChange} name="email" id="email_input" className="input" type="email" placeholder="Email">
+                                <input onChange={handleInputChange} name="userName" id="email_input" className="input" type="userName" placeholder="Username">
                                 </input>
                                 <span className="icon is-small is-left">
                                     <i className="fas fa-envelope"></i>

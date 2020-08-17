@@ -2,7 +2,7 @@ const express = require("express");
 var session = require("express-session");
 var passport = require("./config/passport");
 require("dotenv").config();
-// const routes = require("./routes");
+const routs = require("./routs");
 const path = require("path");
 
 var db = require("./models")
@@ -24,11 +24,11 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 // Add routes, both API and view
-// app.use(routes);
+app.use(routs);
 
 // Connect to the Mongo DB
 
-db.sequelize.sync({ force: true}).then(function () {
+db.sequelize.sync({ force: false}).then(function () {
   app.listen(PORT, function () {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
